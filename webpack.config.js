@@ -8,6 +8,17 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
+  resolve: {
+    alias: {
+      '#scss': path.join(__dirname, 'scss/'),
+      '#assets': path.join(__dirname, 'assets/'),
+    },
+  },
+  devServer: {
+    contentBase: 'dist',
+    port: 8080,
+    hot: true,
+  },
   module: {
     rules: [
       {
@@ -20,21 +31,24 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        test: /\.(s[ac]ss|css)$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          // Translates CSS into CommonJS
+          'css-loader',
+          // Compiles Sass to CSS
+          'sass-loader',
+        ],
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        // Feel free to change next line for when you need to support other file extensions
+        test: /\.(png|jpe?g|gif)$/i,
         use: [
-          'file-loader',
           {
-            loader: 'image-webpack-loader',
-            options: {
-              bypassOnDebug: true, // webpack@1.x
-              disable: true // webpack@2.x and newer
-            }
-          }
-        ]
+            loader: 'file-loader',
+          },
+        ],
       },
     ],
   },
