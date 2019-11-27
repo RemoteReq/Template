@@ -1,6 +1,7 @@
 import React from 'react';
 
 const LPHeader = () => (
+  // <div className='charlie'></div>
   <div className='landingPage-header'>
     <div className="landingPage-overlay"></div>
     <div className='landingPage-heading-buttons'>
