@@ -31,7 +31,7 @@ const Navigation = props => {
       </div>
       <div className='landingPage-navBar-links' style={ menuVisible }>
         <ul>
-          <li><a href='#'>jobs</a></li>
+          <li><a href='/jobslist'>jobs</a></li>
           <li><a href='#'>alerts</a></li>
           <li><a href='#'>messages</a></li>
           {/* <li className='landingPage-signIn-button'><a href='http://localhost:8080/login'>

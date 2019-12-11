@@ -3,3 +3,10 @@ body {
   margin: 0;
   padding: 0;
 }
+
+// Globale dashboard style
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10vw 0 0;
+}
