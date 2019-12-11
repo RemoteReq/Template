@@ -4,20 +4,20 @@ import ProfileCard from './ProfileCard.jsx';
 import JobsList from './JobsList.jsx';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Axios from 'axios';
+const jobsData = require('../../server/Jobs-Mock-Data.json');
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-
+      jobListing: []
     }
   }
 
   componentDidMount() {
-    Axios.get('/jobslist')
-      .then(res => console.log('hello'))
-      .catch(err => console.log('you have an error!', err))
+    this.setState({ jobListing: jobsData })
+    // console.log(jobsData)
   }
 
   render() {
@@ -30,7 +30,9 @@ class App extends Component {
             <Route
               path='/jobslist'
               render={ props =>
-                <JobsList />
+                <JobsList 
+                  jobListing={this.state.jobListing}
+                />
               }
             />
           </Switch>

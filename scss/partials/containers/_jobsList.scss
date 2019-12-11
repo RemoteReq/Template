@@ -1,11 +1,20 @@
 @media screen and (min-width: 1366px) {
   .jobs-list {
-    margin-top: 15vh;
+    margin: 15vh 0 0 10vw;
+    right: 10vw;
+    position: absolute;
 
     .job-posting {
       border: 1px solid #333;
+      margin-bottom: 15px;
       padding: 1rem;
       width: 800px;
+
+      .jobs-skills {
+        ul {
+          list-style: none;
+        }
+      }
     }
   }
 }
