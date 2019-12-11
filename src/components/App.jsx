@@ -17,7 +17,6 @@ class App extends Component {
 
   componentDidMount() {
     this.setState({ jobListing: jobsData })
-    // console.log(jobsData)
   }
 
   render() {
