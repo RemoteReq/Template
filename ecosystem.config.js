@@ -11,6 +11,7 @@ module.exports = {
       ref: 'origin/master',
       repo: 'https://github.com/RemoteReq/Template.git',
       path: '/home/ubuntu/Template',
+      'post-setup': '',
       'post-deploy': 'npm run dockerize',
     },
   },
