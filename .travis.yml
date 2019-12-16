@@ -5,3 +5,9 @@ node_js:
 
 cache: 
   npm: true
+
+# Travis-CI to only watch master and dev branches
+branches:
+  only:
+    - master
+    - dev
